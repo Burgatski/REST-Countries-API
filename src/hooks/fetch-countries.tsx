@@ -5,12 +5,12 @@ import {FETCH_ERROR, FETCH_SUCCESS} from "../constants"
 
 const initialState = {
 	countries: [],
-	loading: true,
+	isLoading: true,
 	error: "",
 };
 
 export const useFetchCountries = () => {
-	const [{ countries, loading, error }, dispatch] = useReducer(
+	const [{ countries, isLoading, error }, dispatch] = useReducer(
 		countriesReducer,
 		initialState,
 	);
@@ -35,5 +35,5 @@ export const useFetchCountries = () => {
 		);
 	}, [countries])
 
-	return { countries: sortedCountries, loading, error }
+	return { countries: sortedCountries, isLoading, error }
 }

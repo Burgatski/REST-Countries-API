@@ -20,4 +20,12 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 1.4rem;
     line-height: 1.6rem;
   }
+  
+  a {
+  text-decoration: none;
+  }
+  
+  li {
+      list-style-type: none;
+  }
 `

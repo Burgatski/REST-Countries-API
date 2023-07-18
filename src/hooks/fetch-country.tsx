@@ -5,16 +5,15 @@ import {URL} from "./constants"
 
 const initialState = {
 	country: [],
-	loading: true,
+	isLoading: true,
 	error: "",
 };
 
 export const useFetchCountry = (code: string | undefined) => {
-	// @ts-ignore
-	const [{ country, loading, error }, dispatch] = useReducer(
+	const [{ country, isLoading, error }, dispatch] = useReducer(
 		countryReducer,
 		initialState,
-	);
+	)
 
 	useEffect(() => {
 		const requestDataCountry = async () => {
@@ -30,5 +29,5 @@ export const useFetchCountry = (code: string | undefined) => {
 		requestDataCountry()
 	}, [code]);
 
-	return { country, loading, error }
+	return { country, isLoading, error }
 }

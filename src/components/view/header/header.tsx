@@ -1,13 +1,13 @@
 import React from 'react'
 import {Link} from "react-router-dom"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {HeadLine, StyledHeader, Wrapper, WrapperThemeSwitcher, Label} from './style'
+import {HeadLine, StyledHeader, Wrapper, WrapperThemeSwitcher, Label, IconMoon} from './style'
 import {useThemeContext} from "../../../context/theme-context"
-import {faMoon} from '@fortawesome/free-solid-svg-icons'
+import {IoMoonOutline} from "react-icons/io5";
 
 
 export const Header: React.FC = () => {
-    const {setDark} = useThemeContext()
+    const {isDark, setDark} = useThemeContext()
     return (
         <Wrapper>
             <StyledHeader>
@@ -17,8 +17,18 @@ export const Header: React.FC = () => {
                     </HeadLine>
                 </Link>
                 <WrapperThemeSwitcher onClick={setDark}>
-                    <FontAwesomeIcon icon={faMoon}/>
-                    <Label>Dark Mode</Label>
+                    {isDark ? (
+                        <>
+                            <IconMoon/>
+                            <Label> Dark Mode</Label>
+                        </>
+                    ) : (
+                        <>
+                            <IoMoonOutline/>
+                            <Label>Light Mode</Label>
+                        </>
+                    )
+                    }
                 </WrapperThemeSwitcher>
             </StyledHeader>
         </Wrapper>
