@@ -1,0 +1,1 @@
+export {CountryDetail} from './coutry-detail'

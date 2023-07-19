@@ -1,3 +1,4 @@
+import {IoMoon} from "react-icons/io5"
 import styled from 'styled-components'
 import {Layout} from "../layout";
 import media from "../../../global/media"
@@ -7,6 +8,9 @@ export const Wrapper = styled.header`
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0562443);
 `;
 
+export const IconMoon = styled(IoMoon)`
+fill: ${({ theme }) => theme.colors.white};
+`
 export const StyledHeader = styled(Layout)`
   display: flex;
   justify-content: space-between;
