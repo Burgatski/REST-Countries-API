@@ -18,7 +18,7 @@ export const Wrapper = styled.form`
     padding: 1.8rem 3.2rem;
     max-width: 40rem;
   }
-`;
+`
 
 export const Icon = styled(IoSearchSharp)`
   fill: ${({ theme }) => theme.colors.input};
@@ -29,7 +29,7 @@ export const Icon = styled(IoSearchSharp)`
     width: 1.8rem;
     height: 1.8rem;
   }
-`;
+`
 
 export const Input = styled.input`
   padding: 0;
@@ -49,4 +49,4 @@ export const Input = styled.input`
   @media (${media.md}) {
     font-size: 1.4rem;
   }
-`;
+`

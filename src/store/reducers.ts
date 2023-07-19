@@ -2,7 +2,7 @@ import {FETCH_SUCCESS, FETCH_ERROR, SET_SEARCH, SET_SELECT} from "../constants"
 
 type CountriesAction =
 	| { type: typeof FETCH_SUCCESS; payload: Countries[] }
-	| { type: typeof FETCH_ERROR };
+	| { type: typeof FETCH_ERROR }
 
 export const countriesReducer = (state: CountriesState, action: CountriesAction): any => {
 	switch (action.type) {
@@ -11,12 +11,13 @@ export const countriesReducer = (state: CountriesState, action: CountriesAction)
 				...state,
 				countries: action.payload,
 				isLoading: false,
+				error: false
 			};
 		case FETCH_ERROR:
 			return {
 				...state,
 				isLoading: false,
-				error: "something went wrong",
+				error: true,
 			};
 		default:
 			return state
@@ -25,7 +26,7 @@ export const countriesReducer = (state: CountriesState, action: CountriesAction)
 
 type CountryAction =
 	| { type: typeof FETCH_SUCCESS; payload: Country[] }
-	| { type: typeof FETCH_ERROR };
+	| { type: typeof FETCH_ERROR }
 
 export const countryReducer = (state: CountryState, action: CountryAction):any => {
 	switch (action.type) {
@@ -34,12 +35,13 @@ export const countryReducer = (state: CountryState, action: CountryAction):any =
 				...state,
 				country: action.payload,
 				isLoading: false,
+				error: false
 			};
 		case FETCH_ERROR:
 			return {
 				...state,
 				isLoading: false,
-				error: "Something went wrong",
+				error: true,
 			};
 		default:
 			return state
@@ -48,7 +50,7 @@ export const countryReducer = (state: CountryState, action: CountryAction):any =
 
 type FormActions =
 	| { type: typeof SET_SEARCH; payload: string }
-	| { type: typeof SET_SELECT; payload: string };
+	| { type: typeof SET_SELECT; payload: string }
 
 export const formReducer = (state: FormState, action: FormActions) => {
 	switch (action.type) {
@@ -63,6 +65,6 @@ export const formReducer = (state: FormState, action: FormActions) => {
 				select: action.payload,
 			};
 		default:
-			return state;
+			return state
 	}
-};
+}

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {IoArrowBackOutline} from "react-icons/io5";
-import media from "../../../global/media";
+import styled from "styled-components"
+import {IoArrowBackOutline} from "react-icons/io5"
+import media from "../../../global/media"
 
 export const Icon = styled(IoArrowBackOutline)`
   fill: ${({ theme }) => theme.colors.text};
@@ -40,4 +40,4 @@ export const Wrapper = styled.div`
       line-height: 1.9rem;
     }
   }
-`;
+`

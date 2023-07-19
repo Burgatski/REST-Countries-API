@@ -6,7 +6,7 @@ import media from "../../../global/media"
 export const Wrapper = styled.header`
   background: ${({ theme }) => theme.colors.bg.secondary};
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.0562443);
-`;
+`
 
 export const IconMoon = styled(IoMoon)`
 fill: ${({ theme }) => theme.colors.white};
@@ -16,7 +16,7 @@ export const StyledHeader = styled(Layout)`
   justify-content: space-between;
   align-items: center;
   height: 8rem;
-`;
+`
 
 export const HeadLine = styled.h1`
   font-weight: 800;
@@ -28,7 +28,7 @@ export const HeadLine = styled.h1`
     font-size: 2.4rem;
     line-height: 3.3rem;
   }
-`;
+`
 
 export const WrapperThemeSwitcher = styled.button`
   display: flex;
@@ -37,7 +37,7 @@ export const WrapperThemeSwitcher = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
-`;
+`
 
 export const Label = styled.span`
   display: block;
@@ -50,4 +50,4 @@ export const Label = styled.span`
     font-size: 1.6rem;
     line-height: 2.2rem;
   }
-`;
+`

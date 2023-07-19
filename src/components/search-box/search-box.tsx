@@ -1,8 +1,8 @@
 import {useCountriesContext} from "../../context/countries-context"
-import {Icon, Input, Wrapper} from "./style";
+import {Icon, Input, Wrapper} from "./style"
 
 export const SearchBox = () => {
-    const { search, setSearch } = useCountriesContext();
+    const { search, setSearch } = useCountriesContext()
     return (
         <Wrapper autoComplete="off" onSubmit={e => e.preventDefault()}>
             <Icon />
@@ -15,5 +15,5 @@ export const SearchBox = () => {
                 onChange={(e) => setSearch(e.target.value)}
             />
         </Wrapper>
-    );
+    )
 }

@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components"
 import media from '../../../global/media'
 
 export const Wrapper = styled.div`
@@ -43,5 +43,5 @@ export const Wrapper = styled.div`
       line-height: 1.9rem;
     }
   }
-`;
+`
 

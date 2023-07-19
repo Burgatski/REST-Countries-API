@@ -1,9 +1,8 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {HeadLine, StyledHeader, Wrapper, WrapperThemeSwitcher, Label, IconMoon} from './style'
 import {useThemeContext} from "../../../context/theme-context"
-import {IoMoonOutline} from "react-icons/io5";
+import {IoMoonOutline} from "react-icons/io5"
 
 
 export const Header: React.FC = () => {

@@ -1,3 +1,7 @@
+interface ChildrenProp {
+    children: React.ReactNode;
+}
+
 interface Countries {
     cca3: string;
     flags: {
