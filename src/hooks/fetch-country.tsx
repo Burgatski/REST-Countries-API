@@ -24,10 +24,10 @@ export const useFetchCountry = (code: string | undefined) => {
 			} catch (error) {
 				dispatch({ type: FETCH_ERROR })
 			}
-		};
+		}
 
 		requestDataCountry()
-	}, [code]);
+	}, [code])
 
 	return { country, isLoading, error }
 }

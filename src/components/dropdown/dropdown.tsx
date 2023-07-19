@@ -1,16 +1,16 @@
-import React, {useState, useEffect, useRef} from "react";
-import { REGIONS } from './constants';
-import { useCountriesContext } from "../../context/countries-context";
-import {Icon, Wrapper, Header, Options, Option, Label} from "./style";
+import React, {useState, useEffect, useRef, useCallback} from "react"
+import { REGIONS } from './constants'
+import { useCountriesContext } from "../../context/countries-context"
+import {Icon, Wrapper, Header, Options, Option, Label} from "./style"
 
-export const Dropdown = () => {
-    const { select, setSelect } = useCountriesContext();
-    const [hideSelect, setHideSelect] = useState(false);
-    const selectRef = useRef<HTMLDivElement | null>(null);
+export const Dropdown: React.FC = () => {
+    const { select, setSelect } = useCountriesContext()
+    const [hideSelect, setHideSelect] = useState(false)
+    const selectRef = useRef<HTMLDivElement | null>(null)
 
-    const toggleSelect = () => {
-        setHideSelect(!hideSelect)
-    }
+    const toggleSelect = useCallback(() => {
+        setHideSelect((prevHideSelect) => !prevHideSelect)
+    }, []);
 
     useEffect(() => {
         const outsideClick = (e: MouseEvent) => {
@@ -23,12 +23,12 @@ export const Dropdown = () => {
         };
 
         if (hideSelect) {
-            window.addEventListener('click', outsideClick);
+            window.addEventListener('click', outsideClick)
         }
         return () => {
-            window.removeEventListener('click', outsideClick);
+            window.removeEventListener('click', outsideClick)
         };
-    }, [hideSelect, toggleSelect]);
+    }, [hideSelect, toggleSelect])
 
 
     return (

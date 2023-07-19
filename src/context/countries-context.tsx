@@ -5,12 +5,12 @@ import {
 	useCallback,
 	useMemo,
 	ReactNode
-} from "react";
+} from "react"
 import {useFetchCountries} from '../hooks/fetch-countries'
 import { SET_SEARCH, SET_SELECT } from "../constants"
-import { formReducer } from "../store/reducers";
+import { formReducer } from "../store/reducers"
 
-const CountriesContext = createContext({} as CountriesContextType);
+const CountriesContext = createContext({} as CountriesContextType)
 
 const initialState = {
 	search: "",
@@ -22,24 +22,24 @@ export function CountriesProvider({ children }: { children: ReactNode }) {
 	const [{ search, select }, dispatch] = useReducer(formReducer, initialState);
 
 	const setSearch = useCallback((search: string) => {
-		dispatch({ type: SET_SEARCH, payload: search });
+		dispatch({ type: SET_SEARCH, payload: search })
 	}, []);
 
 	const filteredCountries = useMemo(() => {
 		return countries.filter(({ name: { official } }) =>
 			official.toLowerCase().includes(search.toLowerCase()),
 		);
-	}, [countries, search]);
+	}, [countries, search])
 
 	const setSelect = useCallback((select: string) => {
-		dispatch({ type: SET_SELECT, payload: select });
-	}, []);
+		dispatch({ type: SET_SELECT, payload: select })
+	}, [])
 
 	const selectRegion = useMemo(() => {
-		return countries.filter(({ region }) => region.includes(select));
-	}, [countries, select]);
+		return countries.filter(({ region }) => region.includes(select))
+	}, [countries, select])
 
-	const countrySorted = search ? filteredCountries : selectRegion;
+	const countrySorted = search ? filteredCountries : selectRegion
 	return (
 		<CountriesContext.Provider
 			value={{
@@ -57,4 +57,4 @@ export function CountriesProvider({ children }: { children: ReactNode }) {
 	);
 }
 
-export const useCountriesContext = () => useContext(CountriesContext);
+export const useCountriesContext = () => useContext(CountriesContext)

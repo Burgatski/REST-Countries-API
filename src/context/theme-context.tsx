@@ -1,7 +1,7 @@
 import React, {createContext, ReactNode, useContext, useReducer}  from 'react'
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components'
 import {ThemeContextType} from "./types"
-import {dark, light} from "../global/theme";
+import {dark, light} from "../global/theme"
 
 const ThemeContext = createContext({} as ThemeContextType)
 
@@ -21,4 +21,4 @@ export const ThemesProvider = ({ children }: { children: ReactNode }) => {
 	);
 }
 
-export const useThemeContext = () => useContext(ThemeContext);
+export const useThemeContext = () => useContext(ThemeContext)

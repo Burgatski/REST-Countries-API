@@ -13,7 +13,7 @@ export const useFetchCountries = () => {
 	const [{ countries, isLoading, error }, dispatch] = useReducer(
 		countriesReducer,
 		initialState,
-	);
+	)
 
 	useEffect(() => {
 		const fetchCountries = async () => {
@@ -27,7 +27,7 @@ export const useFetchCountries = () => {
 		}
 
 		fetchCountries()
-	}, []);
+	}, [])
 
 	const sortedCountries = useMemo(() => {
 		return countries.sort((a, b) =>

@@ -1,4 +1,4 @@
 export interface ThemeContextType {
-    isDark: boolean;
-    setDark: () => void;
+    isDark: boolean
+    setDark: () => void
 }
